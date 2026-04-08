@@ -1,0 +1,8 @@
+Evm overview 
+evm can access and store  info  in six places:
+1.stack
+2.memory - temp var that can be modified
+3.storage -permanent var that can be modified
+4.calldata -temp var  that can not  be modified 
+5.code
+6.logs
