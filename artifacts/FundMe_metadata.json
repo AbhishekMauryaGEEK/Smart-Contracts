@@ -7,14 +7,21 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "fund",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
+				"stateMutability": "nonpayable",
+				"type": "constructor"
 			},
 			{
 				"inputs": [],
-				"name": "minusdvalue",
+				"name": "NotOwner",
+				"type": "error"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "MINIMUM_USD",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -24,6 +31,88 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fund",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "funders",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getVersion",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "i_owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -39,7 +128,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/fundme.sol": "FundMe"
+			"fund-me-fcc/FundMe.sol": "FundMe"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -53,11 +142,28 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/fundme.sol": {
-			"keccak256": "0xa5387cfd2a2820315e5bcbedf3c1da88ee03ca25c2464e2519bf0c9b2a489fc9",
+		"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0xfe4e8bb4861bb3860ba890ab91a3b818ec66e5a8f544fb608cfcb73f433472cd",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://fe09fc90f187fdb3b6ab8ae3459cc1c9b7d4750fd04c31bed1c27ef3d33949ad",
-				"dweb:/ipfs/QmWTf7DXRDYG5VJZ8MptzJXs1vzwwfmi3kzE2sbqkUqc1m"
+				"bzz-raw://644cff84052e1e82b5bb502b2a46e8f142a62b0db4cd9b38200798ba8373c6f7",
+				"dweb:/ipfs/QmTa99QHrJBn3SXDizquPBUiTxVCNKQrHgaWJhuds5Sce2"
+			]
+		},
+		"fund-me-fcc/FundMe.sol": {
+			"keccak256": "0xdaefd025e42ec134779facef739ce73c4f37fb2fbeb192c59018672028acba2c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f2a441c7ab1dc4b9a1b84d53e00bb622c6342c271c81b0b0c1f3d9a262a3f0a0",
+				"dweb:/ipfs/QmbTtwm6Xrw1t3UBCrbj1Ee61MN8MTSELB9sNxDhzbJSK9"
+			]
+		},
+		"fund-me-fcc/PriceConverter.sol": {
+			"keccak256": "0x6317544f2bdd541c7808745c42c0396388aa75be18a95f7ca7ad7b063e121292",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://74185015be487ad5e222d618719640dc98ab43aa9f2448d19c8fc6bb0134bbd0",
+				"dweb:/ipfs/QmcH9JyZrCPmcFc42BJGZEdzk3eumErrHuncVGo8jz1Z5J"
 			]
 		}
 	},
